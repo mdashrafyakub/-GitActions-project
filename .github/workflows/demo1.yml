@@ -1,11 +1,18 @@
 name: Events Demo 1
-on: ...
+on: 
+  workflow_dispatch:
+    inputs:
+      VM_NAME:
+        required: true
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
+      - name: echo input
+        run:  echo "${{ inputs.VM_NAME }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
