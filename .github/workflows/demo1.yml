@@ -1,9 +1,10 @@
 name: Events Demo 1
 on: 
-  workflow_dispatch:
-    inputs:
-      VM_NAME:
-        required: true
+  # workflow_dispatch:
+  #   inputs:
+  #     VM_NAME:
+  #       required: true
+  push
   
 jobs:
   deploy:
